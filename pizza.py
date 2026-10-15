@@ -33,10 +33,10 @@ elif size=="L":
 print("Pizza price so far: £" + str(price))
 
 # Step 2 - Choose a base
-base = input("choose the base you would like on your pizza: classic crust, thin Crust or deep Pan?")
+base = input("choose the base you would like on your pizza: classic crust, thin Crust or deep Pan?").lower()
 while base not in ["classic crust", "thin crust", "deep pan"]:
    print("invalid option, please selcet again!")
-   base = input("classic crust, thin crust or deep pan?")
+   base = input("classic crust, thin crust or deep pan?").lower()
 
 if base=="classic crust":
    price = price + 0
@@ -49,7 +49,7 @@ print("Pizza price so far: £" + str(price))
 
 
 # Step 3 - Decide how many toppings you would like
-toppings = [("cheese", 1.00), ("pepperoni", 1.50), ("mushrooms", 1.00), ("onions", 0.75), ("pinnaple" , 0.5)]
+toppings = [("cheese", 1.50), ("pepperoni", 1.50), ("mushrooms", 1.50), ("onions", 1.50), ("pinnaple" , 1.50)]
 
 for topping, cost in toppings:
     choice = input("do you want " + topping + " yes or no?").upper()
@@ -65,14 +65,14 @@ for topping, cost in toppings:
     print("Pizza price so far: £" + str(price))
 
 # Step 4 - Eat in or Takeaway?
-takeaway = input("do you want takeaway yes or no?")
-while takeaway not in ["Yes", "No"]:
+takeaway = input("do you want takeaway yes or no?").lower().strip()
+while takeaway not in ["yes", "no"]:
    print("invalid option please selcet again!")
-   takeway = input("do you want takeaway yes or no?")
+   takeway = input("do you want takeaway yes or no?").lower().strip()
 
-if takeaway=="Yes":
+if takeaway=="yes":
    price = price + 2
-elif takeaway=="No":
+elif takeaway=="no":
    price = price + 0
 
 print("Pizza price so far: £" + str(price))
