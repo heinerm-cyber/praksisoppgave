@@ -8,3 +8,4 @@ Hvis du er uheldig og skiver feil har jeg brukt while løkker under alle spørsm
 
 underveis mens du bestiller etter hvert av spørsmålene vil koden også printe ut hva prisen på pizaen er midlertidig også på slutten av koden vil den oppsummmere helle prisen 
 
+i denne branchen er koden er den satt op med if og elif i stede for dictionary men den funker på helt samme måtte som den andre jeg har også brukt while løkkker og for løkker til og la deg begynne på nytt og til og gå gjennom spørsmål
