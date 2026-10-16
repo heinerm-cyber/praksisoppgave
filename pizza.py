@@ -19,31 +19,35 @@ print("""We have three sizes of pizza:
     - Large (£10)""")
 
 size = input("Enter the size of your pizza: S, M or L?").upper()
-while size not in ["S", "M", "L"]:
+pizza_sizes = {
+   "S": 6,
+   "M": 8,
+   "L": 10
+}
+
+
+while size not in pizza_sizes:
    print("Invalid option, please try again!")
    size = input("Enter the size of your pizza: S, M or L?").upper()
 
-if size=="S":
-   price = price + 6
-elif size=="M":
-   price = price + 8
-elif size=="L":
-   price = price + 10
+price = price + pizza_sizes[size]
 
 print("Pizza price so far: £" + str(price))
 
 # Step 2 - Choose a base
 base = input("choose the base you would like on your pizza: classic crust, thin Crust or deep Pan?").lower()
+
+pizza_base = {
+    "classic crust":0,
+    "thin crust":1,
+    "deep pan":2
+}
+
 while base not in ["classic crust", "thin crust", "deep pan"]:
    print("invalid option, please selcet again!")
    base = input("classic crust, thin crust or deep pan?").lower()
 
-if base=="classic crust":
-   price = price + 0
-elif base=="thin crust":
-   price = price + 1
-elif base=="deep pan":
-   price = price + 2
+price = price + pizza_base[base]
 
 print("Pizza price so far: £" + str(price))
 
@@ -65,24 +69,27 @@ for topping, cost in toppings:
     print("Pizza price so far: £" + str(price))
 
 # Step 4 - Eat in or Takeaway?
-takeaway = input("do you want takeaway yes or no?").lower().strip()
-while takeaway not in ["yes", "no"]:
-   print("invalid option please selcet again!")
-   takeway = input("do you want takeaway yes or no?").lower().strip()
+takeaway = input("Do you want takeaway yes or no? ").strip().lower()
 
-if takeaway=="yes":
-   price = price + 2
-elif takeaway=="no":
-   price = price + 0
+takeaway_options = {
+    "yes": 2,
+    "no": 0
+}
+
+while takeaway not in takeaway_options:
+    print("Invalid option, please select again!")
+    takeaway = input("Do you want takeaway yes or no? ").strip().lower()
+
+price = price + takeaway_options[takeaway]
 
 print("Pizza price so far: £" + str(price))
-
 
 # Step 5 - Enter Discount Code
 discount_code = input("Do you have a discount code? ").upper()
 
-if discount_code == "P1ZZ4":
-    price = price * 0.8  
-    print("Discount applied! You saved 20%.")
+secret_discount = {
+    "P1ZZ4" * 0.8
+}
 
 print("Final Pizza price: £" + str(price))
+
